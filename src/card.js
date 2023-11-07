@@ -1,4 +1,4 @@
-function Card(props) {
+ function Card(props) {
     return (
       <div className="cards">
           <div class="card-group">
@@ -28,4 +28,4 @@ function Card(props) {
     );
   }
   
-  export default Card;
+  export default Card;            

@@ -1,31 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-import BrowserRouter from 'react-router-dom';
-import Routes from 'react-router-dom';
-import Route from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from './navbar'; // Import your Navbar component here
+import Home from './home'; // Import your Home component here
+import Card from './card.js'; // Import your Card component here
+import Contact from './contact'; // Import your Contact component here
+import NoPage from './nopage'; 
 
 function App() {
   return (
-<BrowserRouter>
+    <BrowserRouter>
+      <Navbar title="Navbar" />
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="blogs" element={<Blogs />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NoPage />} />
-        </Route>
+        <Route path="/" element={<Home />} />
+        <Route path="card" element={<Card />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>
-    <div className="App">
-      <h1>CS 230L</h1>
-	<h2>Section 002</h2>
-	<p>WVU ID: 800296192</p>
-	<p>Hi, I am Brett Finzel</p>
-    </div>
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
-
 export default App;
+
+
+
